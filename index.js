@@ -25,7 +25,7 @@ const initServer = (req, res) =>{
 const server = https.createServer(initServer);
 
 
-const socketConnection = () => new WebSocket('ws://localhost:4000');
+const socketConnection = () => new WebSocket('wss://websocketserver-github-io-1.onrender.com');
 
 socketConnection.onopen = () =>{
     connection.send('hellow , socket connection is open for client')
@@ -39,6 +39,6 @@ socketConnection.onmessage = (message) =>{
     console.log(message.data);
 }
 
-server.listen(4000, ()=>{
+server.listen('https://websocketserver-github-io-1.onrender.com', ()=>{
     console.log("server is connected with port 4000")
 })
